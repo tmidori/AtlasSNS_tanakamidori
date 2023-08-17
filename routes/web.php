@@ -45,6 +45,6 @@ Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');
 
 
-Route::get('/', function () {
-  return view('auth/login');
-})->name('login');
+// Route::get('/', function () {
+//   return view('auth/login');
+// })->name('login');
