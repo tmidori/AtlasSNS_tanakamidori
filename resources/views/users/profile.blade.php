@@ -3,28 +3,28 @@
 @section('content')
 
 <form action="{{ url('/profile')}}" method="POST">
-  <div class="form-update">
-    <div class="">
+  <div class="form-profile">
+    <div class="pr-block">
       <label class="form-text" for="username">user name</label>
-      <input class="form-input" type="text" value="" name="name" required>
+      <input class="form-input" type="text" value="{{Auth::user()->username}}" name="name" required>
     </div>
-    <div class="">
+    <div class="pr-block">
       <label class="form-text" for="mail">mail address</label>
-      <input class="form-input" type="text" value="" name="mail" required>
+      <input class="form-input" type="text" value="{{Auth::user()->mail}}" name="mail" required>
     </div>
-    <div class="">
+    <div class="pr-block">
       <label class="form-text" for="password">password</label>
-      <input class="form-input" type="password" value="" name="password" required>
+      <input class="form-input" type="password" value="{{Auth::user()->password}}" name="password" required>
     </div>
-    <div class="">
+    <div class="pr-block">
       <label class="form-text" for="password">password confirm</label>
       <input class="form-input" type="password" value="" name="confirm" oninput="CheckPassword(this)" required>
     </div>
-    <div class="">
+    <div class="pr-block">
       <label class="form-text" for="bio">bio</label>
       <textarea name="bio" id="bio"></textarea>
     </div>
-    <div class="">
+    <div class="pr-block">
       <label class="form-text" for="image">icon image</label>
       <input class="form-input" type="file" name="images" id="fileImage">
     </div>
