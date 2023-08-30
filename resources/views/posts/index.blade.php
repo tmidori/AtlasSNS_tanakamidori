@@ -1,7 +1,7 @@
 @extends('layouts.login')
 
 @section('content')
-<!-- <h2>機能を実装していきましょう。テスト</h2> -->
+<!--投稿フォーム-->
 <div class="container">
   <img class="user-icon" src="images/icon1.png">
   {!! Form::open(['url' => 'post/create']) !!}

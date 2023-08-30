@@ -23,27 +23,18 @@
     <header>
         <div id = "head">
           <h1><a href="/top"><img class="topIcon" src="images/atlas.png"></a></h1>
-            <div id="middle">
-                <p class="users menu-btn"> {{Auth::user()->username}}さん
-                    <span class="accordion-title"></span>
-                        <div id="item">
-                            <img class="Item" src="images/icon1.png">
-                        </div>
-                </p>
+          <div class="side_user">
+            <div id="accordion" class="accordion-container">
+                <div class="accordion-title jas-accordion-title"></div>
+                <p>{{Auth::user()->username}}さん<img class="Item" src="images/icon1.png"></p>
+                <ul class="menu">
+                  <li><a class="home" href="/top">HOME</a></li>
+                  <li><a class="icon" href="/profile">プロフィール編集</a></li>
+                  <li><a class="center" href="/logout">ログアウト</a></li>
+                </ul>
             </div>
+          </div>
 
-            <!-- アコーディオンメニュー -->
-            <button type="button" class="menu-btn">
-                <span class="inn"></span>
-            </button>
-            <p id="is-open" class="is-open"></p>
-                <nav class="menu">
-                    <ul>
-                      <li><a class="home" href="/top">HOME</a></li>
-                      <li><a class="icon" href="/profile">プロフィール編集</a></li>
-                      <li><a class="center" href="/logout">ログアウト</a></li>
-                    </ul>
-                </nav>
         </div>
     </header>
 
@@ -70,7 +61,7 @@
     </div>
     <footer>
     </footer>
-    <script src="{{ asset('/js/app.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="{{ asset('/js/script.js') }}"></script>
 </body>
 </html>
