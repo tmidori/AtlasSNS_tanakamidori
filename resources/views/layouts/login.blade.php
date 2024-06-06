@@ -24,14 +24,15 @@
         <div id = "head">
           <h1><a href="/top"><img class="topIcon" src="images/atlas.png"></a></h1>
           <div class="side_user">
-            <div id="accordion" class="accordion-container">
-                <div class="accordion-title jas-accordion-title"></div>
+            <div id='accordion' class="accordion-container">
                 <p>{{Auth::user()->username}}さん<img class="Item" src="images/icon1.png"></p>
-                <ul class="menu">
-                  <li><a class="home" href="/top">HOME</a></li>
-                  <li><a class="icon" href="/profile">プロフィール編集</a></li>
-                  <li><a class="center" href="/logout">ログアウト</a></li>
-                </ul>
+                <div class='accordion-title jas-accordion-title'>
+                    <ul class="menu">
+                      <li><a class="home" href="/top">HOME</a></li>
+                      <li><a class="icon" href="/profile">プロフィール編集</a></li>
+                      <li><a class="center" href="/logout">ログアウト</a></li>
+                    </ul>
+                </div>
             </div>
           </div>
 

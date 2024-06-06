@@ -23,11 +23,12 @@
 Route::get('/login', 'Auth\LoginController@login');
 Route::post('/login', 'Auth\LoginController@login');
 
-Route::get('/register', 'Auth\RegisterController@register');
-Route::post('/register', 'Auth\RegisterController@register');
-
 Route::get('/logout', 'Auth\LoginController@logout');
 Route::post('/logout', 'Auth\LoginController@logout');
+
+//新規登録
+Route::get('/register', 'Auth\RegisterController@register');
+Route::post('/register', 'Auth\RegisterController@register');
 
 Route::get('/added', 'Auth\RegisterController@added');
 Route::post('/added', 'Auth\RegisterController@added');
@@ -41,6 +42,9 @@ Route::middleware(['auth'])->group(function(){
 
 //検索画面
 Route::get('/search','UsersController@search');
+
+//新規投稿
+Route::get('/post','UsersController@post');
 
 Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');
