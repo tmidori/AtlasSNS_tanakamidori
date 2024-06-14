@@ -12,4 +12,6 @@
   {!! Form::close() !!}
 </div>
 
+<!-- フォロワーリスト -->
+
 @endsection

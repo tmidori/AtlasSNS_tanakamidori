@@ -13,4 +13,5 @@ class FollowsController extends Controller
     public function followerList(){
         return view('follows.followerList');
     }
+
 }

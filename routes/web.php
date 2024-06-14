@@ -18,6 +18,8 @@
 
 //Auth::routes();
 
+//POST→目に見える処理（表示するなど）
+//GET→目に見えない処理（取得するなど）
 
 //ログアウト中のページ
 Route::get('/login', 'Auth\LoginController@login');
@@ -44,7 +46,8 @@ Route::middleware(['auth'])->group(function(){
 Route::get('/search','UsersController@search');
 
 //新規投稿
-Route::get('/post','UsersController@post');
+Route::get('/post','UsersController@index');
+Route::post('/post/index','PostsController@added');
 
 Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');

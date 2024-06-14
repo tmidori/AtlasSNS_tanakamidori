@@ -4,6 +4,7 @@
 
 <form action="{{ url('/profile')}}" method="POST">
   <div class="form-profile">
+    <p><img class="Item" src="images/icon1.png"></p>
     <div class="pr-block">
       <label class="form-text" for="username">user name</label>
       <input class="form-input" type="text" value="{{Auth::user()->username}}" name="name" required>
@@ -31,7 +32,7 @@
     <div class="btn-profileUpdate">
       <button class="btn btn-profileUpdate" type="submit">更新</button>
     </div>
-  </div>
+  </>
   @csrf
 
 </form>

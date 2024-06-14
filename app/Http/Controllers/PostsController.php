@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Post;
+use App\User;
 
 class PostsController extends Controller
 {
@@ -13,10 +16,9 @@ class PostsController extends Controller
 
     //新規投稿
     public function added(Request $request){
-        $id = $request->input('newPost');
-        $user_id = $request->input('newPost');
+        $user_id = Auth::id(); //現在ログインしているユーザーのID取得
         $post = $request->input('newPost');
-        Post::create(['id','user_id','post' => $id, $user_id, $_post]);
+        Post::create(['user_id' => $user_id, 'post' => $post]);
         return back();
     }
 }
