@@ -11,6 +11,7 @@ class PostsController extends Controller
 {
     //投稿表示
     public function index(Request $request){
+        $posts = Post::where('user_id', Auth::id())->get();
         return view('posts/index');
     }
 

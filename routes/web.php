@@ -18,8 +18,8 @@
 
 //Auth::routes();
 
-//POST→目に見える処理（表示するなど）
-//GET→目に見えない処理（取得するなど）
+//POST→ユーザーが見える処理（表示するなど）
+//GET→ユーザーが見えない処理（取得するなど）
 
 //ログアウト中のページ
 Route::get('/login', 'Auth\LoginController@login');
