@@ -25,6 +25,7 @@
           <h1><a href="/top"><img class="topIcon" src="images/atlas.png"></a></h1>
           <div class="side_user">
             <div id='accordion' class="accordion-container">
+                <!-- Auth::user(); 現在ログインしているユーザー情報の取得 -->
                 <p>{{Auth::user()->username}}さん<img class="Item" src="images/icon1.png"></p>
                 <div class='accordion-title jas-accordion-title'>
                     <ul class="menu">

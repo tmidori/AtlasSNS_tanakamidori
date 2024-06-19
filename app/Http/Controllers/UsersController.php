@@ -26,7 +26,8 @@ class UsersController extends Controller
             //whereは条件がある時 全てのデータを持ってきたいときはget
         }
         return view('users.search',['users' => $users , 'keyword' => $keyword]);
-        //return view('フォルダ名.ファイル名',['送りたい値' => 送りたい変数])；
+        //return view('フォルダ名.ファイル名',['送りたい値'(bladeで使いたい名前) => 送りたい変数(ここで使ってる名前)])；
+        //bladeを開くついでに「[]の値もbladeで使うよ」って定義
     }
 
    // ユーザー一覧の表示

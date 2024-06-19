@@ -14,7 +14,15 @@
   <!--投稿表示-->
   <div class = >
     <p><img class="user-icon" src="images/{{Auth::user()->images}}">{{Auth::user() -> username}}</p>
-    <p>{{ $post -> post }}</p>
+    @foreach($post as $post) <!-- 右と左の$postは全く別物！！
+               |      |-> @foreachで処理後のやつ
+               |-> controllerの表示で定義したやつ　-->
+    <tr>
+      <td>{{ $post->post }}</td>
+      <td>{{ $post->created_at }}</td>
+      <!-- ↑ はforeach処理後の定義名 -->
+    </tr>
+    @endforeach
 
   </div>
 
