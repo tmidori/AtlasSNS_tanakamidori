@@ -10,8 +10,8 @@ use App\User;
 class PostsController extends Controller
 {
     //投稿表示
-    public function index(Request $request){
-        $post = Post::where('user_id', Auth::id())->get(); //①
+    public function index(){
+        $post = Post::get(); //①
         return view('posts/index',['post'=>$post]);
     }
 
