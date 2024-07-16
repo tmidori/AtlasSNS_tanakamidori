@@ -49,7 +49,10 @@ Route::get('/search','UsersController@search');
 Route::get('/post','UsersController@index');
 Route::post('/post/index','PostsController@added');
 
-Route::get('/follow-list','PostsController@index');
+//投稿の削除
+Route::get('/posts/{id}/delete', 'PostsController@delete')->name('posts.delete');
+
+Route::get('/followList','PostsController@index');
 Route::get('/follower-list','PostsController@index');
 
 

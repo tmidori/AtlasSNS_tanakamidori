@@ -14,13 +14,18 @@
   <!--投稿表示-->
   <div class = >
     <p><img class="user-icon" src="images/{{Auth::user()->images}}">{{Auth::user() -> username}}</p>
-    @foreach($post as $post) <!-- 右と左の$postは全く別物！！
-               |      |-> @foreachで処理後のやつ
-               |-> controllerの表示で定義したやつ　-->
+    @foreach($posts as $post)
+    <!-- 右と左の$postは全く別物！！ -->
+    <!-- 右：controllerの表示で定義したやつ 左：foreachで処理後のやつ -->
     <tr>
       <td>{{ $post->post }}</td>
+      <!-- 上の「$post」はforeach処理後の定義名 -->
       <td>{{ $post->created_at }}</td>
-      <!-- ↑ はforeach処理後の定義名 -->
+
+      <!-- 投稿の削除 -->
+      <td>
+        <a class="btn btn-danger" href="/posts/{{$post->id}}/delete" onclick="return confirm('この投稿を削除します。よろしいでしょうか？')"><img class="Trash" src="./images/trash.png" alt="delete"></a>
+      </td>
     </tr>
     @endforeach
 

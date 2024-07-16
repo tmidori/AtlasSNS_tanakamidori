@@ -10,9 +10,9 @@ use App\User;
 class PostsController extends Controller
 {
     //投稿表示
-    public function index(){
-        $post = Post::get(); //①
-        return view('posts/index',['post'=>$post]);
+    public function index(Request $request){
+        $posts = Post::where('user_id', Auth::id())->get(); //①
+        return view('posts/index',['posts'=>$posts]);
     }
 
     //新規投稿
@@ -21,6 +21,13 @@ class PostsController extends Controller
         $post = $request->input('newPost'); //投稿内容を受け取る
         Post::create(['user_id' => $user_id, 'post' => $post]);
         return back();
+    }
+
+    //削除
+    public function delete($id)
+    {
+        $posts = Post::Where('id',$id)->delete();
+        return redirect('/top');
     }
 }
 
